@@ -1,0 +1,9 @@
+[RESOURCES]
+Dipendente Ordinazioni
+[VARIABLES]
+Uscita.NumberOut
+Ordinazione.VATime
+Arrivo Clienti.NumberOut
+Ordinazione.NumberIn
+Ordinazione.NumberOut
+Ordinazione.WaitTime
