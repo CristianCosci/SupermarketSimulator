@@ -14,6 +14,8 @@
     - [Simulazione e Analisi](#)
 - [Conclusioni](#)
 
+<hr>
+
 ### **Introduzione**
 Questo progetto consiste in uno studio relativo ad un supermercato locale :convenience_store:: verranno definiti e analizzati i dati iniziali del problema estratti da osservazioni reali, per poi applicarli ad un modello di simulazione sviluppato in Python. Infine verranno illustrate alcune possibili soluzioni per il miglioramento delle performance generali del problema proposto.
 
@@ -97,6 +99,43 @@ Nel grafico :bar_chart: qui di seguito sono riportati i dati relativi alle frequ
 <img src="./data/data_distribution.png" width="80%" />
 
 ## **Analisi Matematica del Modello** :shipit: :pencil:
+
+|**Metrica**|**Valore**|
+|   -   |   -   |
+| Tempo medio di arrivo $\lambda$|  |
+| Tempo medio di servizio $T_s$ |  |
+| Tempo medio di interarrivo $\mu$|  |
+| Intensità del traffico di sistema $\rho$|  |
+| Numero medio di utenti nel sistema $N$|  |
+| Numero medio di utenti in coda $W$| |
+| Tempo medio di risposta $R$ |  |
+| Tempo medio atteso in coda $T_w$|  |
+| Utilizzazione $U$|  |
+
+|**Metrica**|**Valore**|
+|   -   |   -   |
+| Tempo medio di arrivo $\lambda$|  |
+| Tempo medio di servizio $T_s$ |  |
+| Tempo medio di interarrivo $\mu$|  |
+| Intensità del traffico di sistema $\rho$|  |
+| Numero medio di utenti nel sistema $N$|  |
+| Numero medio di utenti in coda $W$| |
+| Tempo medio di risposta $R$ |  |
+| Tempo medio atteso in coda $T_w$|  |
+| Utilizzazione $U$|  |
+
+|**Metrica**|**Valore**|
+|   -   |   -   |
+| Tempo medio di arrivo $\lambda$ |  |
+| Tempo medio di servizio $T_s$ |  |
+| Tempo medio di interarrivo $\mu$ |  |
+| Intensità del traffico di sistema $\rho$ |  |
+| Numero medio di utenti nel sistema $N$ |  |
+| Numero medio di utenti in coda $W$ | |
+| Tempo medio di risposta $R$ |  |
+| Tempo medio atteso in coda $T_w$ |  |
+| Utilizzazione $U$ |  |
+
 
 ## **Codifica del Modello** :computer:
 
