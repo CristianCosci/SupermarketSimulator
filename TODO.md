@@ -3,11 +3,18 @@
 - [x] Convalidare i dati con la godness of fit con una distribuzione (distribuzione da scegliere tra le più facili, niente hyperexp o cose simili)
 - [x] Creare plot distribuzione e frequenze
 - [ ] Confermare validazione di dati con un'altra prova
+    - [ ] Ripulire e abbellire file excel
 - [x] Definire la struttra del progetto, ad es: vari nodi e modelli di coda
 - [x] Creare un simulatore della distribuzione convalidata che segua i dati
-- [ ] Creare diagrammi/disegni di configurazione per il sistema
+- [x] Creare diagrammi/disegni di configurazione per il sistema
     - [ ] Togliere percentuale dei clienti verso la cassa dal disegno del modello
 - [x] Capire e definire quali metriche calcolare (e trovarne le formule)
-- [ ] Inventare dei valori pseudoreali per i parametri di ogni nodo del sistema
+- [x] Inventare dei valori pseudoreali per i parametri di ogni nodo del sistema
+- [ ] Analisi matematica del modello
 - [ ] Creare in Python un simulatore che genera tali ingressi e simuli il supermercat
-v
+- [ ] Fare simulazioni
+    - [ ] Convalidare simulazioni
+- [ ] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire due casse)
+    - [ ] Effettuare analisi matematica della proposta di miglioramento
+    - [ ] Simulazione e convalida della proposta di miglioramento
+- [ ] Conclusioni
