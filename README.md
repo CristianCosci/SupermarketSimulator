@@ -43,7 +43,7 @@ Per conoscere la probabilità di ogni cliente di essere interessato ad usufruire
 - *Probabilità* che un cliente, una volta aver usufruito del reparto `gastronomia`, sia interessato ad usufruire del reparto `scaffali`: $30\%$
 
 Il sistema può quindi essere rappresentato dal seguente diagramma: <br>
-<img src="./imgs/modello.png" width="90%" />
+<img src="./imgs/modello.png" width="100%" />
 
 ## **Raccolta Dati** :notebook:
 Per adempiere a questo scopo, si è deciso di monitorare inizialmente l'afflusso di persone nel supermecato nei due turni di attività: dalle `9:00` alle `13:00` e dalle `16:00` alle `20:00`. Da una prima osservazione è risultato che il maggior numero di clienti vi è durante l'apertura pomeridiana. Si è così deciso di raccogliere i dati relativi agli ingressi in questo arco temporale (4 ore) in quanto il sistema viene maggiormente utilizzato.
