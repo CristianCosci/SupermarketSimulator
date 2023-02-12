@@ -32,15 +32,15 @@ Una volta presi i beni di interesse, il cliente deve recarsi alla cassa per paga
 Il sistema può quindi essere rappresentato con 3 nodi:
 - **Reparto degli scaffali**: il numero di serventi per questo reparto può essere ipotizzato essere $\infty$ in quando non vi è un limite teorico al numero di clienti che possono contemporaneamente trovarsi in questo nodo. Il limiti nell'atto pratico esiste ed è dovuto a limitazioni fisiche ma, per semplificazione verrà considerato un numero di serventi pari a $\infty$
 - **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 2 in quanto ci sono 2 operatori a disposizione dei clienti che servono secondo un ordine FIFO
-- **Cassa**: in questo nodo vi è un solo servente in quanto il supermercato ha solo una cassa a disposizione in cui effettuare il pagamento dei beni acquistati.
+- **Cassa**: il numero di serventi in questo reparto è pari a 2 in quanto il supermercato ha due commessi a disposizione per le casse adibite al pagamento dei beni acquistati da parte dei clienti.
 
 Risulta necessario conoscere i tempi di servizio, la distribuzione degli arrivi al supermercato e il relativo utilizzo dei nodi da parte degli utenti. Ulteriori informazioni sulla raccolta dati e sui tempi di servizio del sistema, essi sono disponibili nella sezione [Raccolta Dati](#raccolta-dati-ledger).
 
 Per conoscere la probabilità di ogni cliente di essere interessato ad usufruire di un determinato servizio all'ingresso del supermercato e la probabilità di ogni cliente di essere interessato ad usufruire di un secondo servizio una volta aver usufruito di un altro, è stato necessario monitorare il lavoro del supermercato in un giorno di apertura. Qui di seguito è riportato un resoconto che riporta i dati **approssimati** relativi alle informazioni ottenute:
-- *Probabilità* che un cliente, all'ingresso nel supermercato, usufruisca del reparto `scaffali`: $75\%$
-- *Probabilità* che un cliente, all'ingresso nel supermercato, usufruisca del reparto `gastronomia`: $25\%$
-- *Probabilità* che un cliente, una volta aver usufruito del reparto `scaffali`, sia interessato ad usufruire del reparto `gastronomia`: $50\%$
-- *Probabilità* che un cliente, una volta aver usufruito del reparto `gastronomia`, sia interessato ad usufruire del reparto `scaffali`: $50\%$
+- *Probabilità* che un cliente, all'ingresso nel supermercato, usufruisca del reparto `scaffali`: $85\%$
+- *Probabilità* che un cliente, all'ingresso nel supermercato, usufruisca del reparto `gastronomia`: $15\%$
+- *Probabilità* che un cliente, una volta aver usufruito del reparto `scaffali`, sia interessato ad usufruire del reparto `gastronomia`: $20\%$
+- *Probabilità* che un cliente, una volta aver usufruito del reparto `gastronomia`, sia interessato ad usufruire del reparto `scaffali`: $30\%$
 
 Il sistema può quindi essere rappresentato dal seguente diagramma: <br>
 <img src="./imgs/modello.png" width="80%" />
@@ -62,9 +62,9 @@ Il numero medio persone al minuto che arrivano al sistema è circa 0,61 (uno ogn
 I tempi di servizio variano a seconda dell’operazione effettuata e sono riportati qui di seguito:
 |    **Reparto**    |**Tempo di Servizio Medio**| **Servienti** |modello di coda|
 | -                 | -                         | -             | - |
-|  **Gastronomia**  | 5 minuti                  | 1             | $m/m/2$ |
+|  **Gastronomia**  | 3 minuti                  | 1             | $m/m/2$ |
 | **Scaffali**      | 15 minuti                 | $\infty$      | $m/m/\infty$
-| **Cassa**         | 4 minuti                  | 1             | $m/m/1$ |
+| **Cassa**         | 190 secondi                  | 1             | $m/m/2$ |
 
 ### **Convalida della Distribuzione Teorica** :round_pushpin:
 A questo punto, è necessario determinare la Distribuzione Teorica corrispondente all'arrivo dei clienti nel supermercato. Per fare ciò, è necessario trovare un'ipotetica distribuzione ed effettuarne la relativa convalida. Qui di seguito sono riportati gli arrivi per ogni intervallo registrato:

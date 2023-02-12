@@ -7,14 +7,17 @@
 - [x] Definire la struttra del progetto, ad es: vari nodi e modelli di coda
 - [x] Creare un simulatore della distribuzione convalidata che segua i dati
 - [x] Creare diagrammi/disegni di configurazione per il sistema
-    - [ ] Togliere percentuale dei clienti verso la cassa dal disegno del modello
+    - [ ] Correggere percentuale dei clienti verso la cassa dal disegno del modello
 - [x] Capire e definire quali metriche calcolare (e trovarne le formule)
 - [x] Inventare dei valori pseudoreali per i parametri di ogni nodo del sistema
 - [ ] Analisi matematica del modello
+    - [ ] Aggiungere routing table
+    - [ ] Parlare del sistema a reti di Jackson
+    - [ ] Calcolare i vari parametri
 - [ ] Creare in Python un simulatore che genera tali ingressi e simuli il supermercat
 - [ ] Fare simulazioni
     - [ ] Convalidare simulazioni
-- [ ] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire due casse)
+- [ ] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
     - [ ] Effettuare analisi matematica della proposta di miglioramento
     - [ ] Simulazione e convalida della proposta di miglioramento
 - [ ] Conclusioni
