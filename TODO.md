@@ -7,7 +7,7 @@
 - [x] Definire la struttra del progetto, ad es: vari nodi e modelli di coda
 - [x] Creare un simulatore della distribuzione convalidata che segua i dati
 - [x] Creare diagrammi/disegni di configurazione per il sistema
-    - [ ] Correggere percentuale dei clienti verso la cassa dal disegno del modello
+    - [x] Correggere percentuale dei clienti verso la cassa dal disegno del modello
 - [x] Capire e definire quali metriche calcolare (e trovarne le formule)
 - [x] Inventare dei valori pseudoreali per i parametri di ogni nodo del sistema
 - [ ] Analisi matematica del modello

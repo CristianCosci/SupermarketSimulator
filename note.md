@@ -11,6 +11,11 @@ Un buon numero di ingressi, osservando le distribuzioni degli altri progetti pu√
 
 I dati sono stati creati e rispettano una distribuzione di Poisson come previsto  e voluto.
 
+# Immagine Modello
+
+L'immagine del modello √® stata generata usando il sito [draw.io](https://draw.io), per
+apportare modifiche, aprire il link e caricare il file `imgs/modello.drawio`.
+
 <hr>
 
 # Struttura del progetto
