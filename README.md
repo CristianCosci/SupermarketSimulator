@@ -62,9 +62,9 @@ Il numero medio di persone al minuto che arrivano al sistema è circa 0,61 (uno 
 I tempi di servizio variano a seconda dell’operazione effettuata e sono riportati qui di seguito:
 |    **Reparto**    |**Tempo di Servizio Medio**| **Servienti** |modello di coda|
 | -                 | -                         | -             | - |
-|  **Gastronomia**  | 3 minuti                  | 2             | $m/m/2$ |
-| **Scaffali**      | 15 minuti                 | $\infty$      | $m/m/\infty$
-| **Cassa**         | 190 secondi                  | 2             | $m/m/2$ |
+|  **Gastronomia**  | 2 minuti                  | 2             | $m/m/2$ |
+| **Scaffali**      | 10 minuti                 | $\infty$      | $m/m/\infty$
+| **Cassa**         | 2 mnuti                   | 2             | $m/m/2$ |
 
 ### **Convalida della Distribuzione Teorica** :round_pushpin:
 A questo punto, è necessario determinare la Distribuzione Teorica corrispondente all'arrivo dei clienti nel supermercato. Per fare ciò, è necessario trovare un'ipotetica distribuzione ed effettuarne la relativa convalida. Qui di seguito sono riportati gli arrivi per ogni intervallo registrato:
@@ -100,36 +100,62 @@ Nel grafico :bar_chart: qui di seguito sono riportati i dati relativi alle frequ
 
 ## **Analisi Matematica del Modello** :shipit: :pencil:
 
+Dalla struttura del modello si può dedurre che si tratta di un sistema a **reti di Jackson**:
+*a classe dei modelli a rete di code di **Jackson** è formata da reti aperte, con centri di **servizio esponenziali**, **arrivi Poissoniani** e **topologia probabilistica** arbitraria indipendente dallo stato della rete.* <br>
+Questo perchè vi sono definite delle probabilità per cui un cliente può passare ad un altro nodo dopo averne usufruito di un altro. Ad esempio i clienti hanno una probabilità del $20\%$ di usufruire del `Reparto Scaffali` dopo aver usufruito del `Reparto Gastronomia`.
+
+Per calcolare i parametri dei vari nodi è necessario definire la routing table delle probabilità in quanto la formula da utilizzare per calcolare il parametro $\lambda$, di ogni nodo, è la seguente:
+$$\lambda_i = \gamma_i \sum_{j=1}^{M}\lambda_j p_{ji}$$
+dove $p_{ij}$ è la `probabilità di andare dal nodo j al nodo i` e $\gamma_i$ è il tasso di arrivo dall'esterno al nodo i. <br>
+La **Routing Table** (o _tabella delle probabilità_) del nostro modello è la seguente:
+
+|**$p_{ij}$**| 1 | 2 | 3 | 4 |
+| -          | - | - | - | - |
+| **1**      | - | 80% | 20% | - |
+| **2**      | - | -   | 15% | 85% |
+| **3**      | - | 30% | -   | 70% |
+| **4**      | - | - | - | - |
+
+dove:
+- 1 = `arrivo`
+- 2 = `Reparto Scaffali`
+- 3 = `Reparto Gastronomia`
+- 4 = `Cassa`
+
+Il parametro generale $\lambda$ per gli arrivi nel supermercato è circa $0,61 min^-1$.
+
+### **Reparto Scaffali** $M/M/\infty$
 |**Metrica**|**Valore**|
 |   -   |   -   |
-| Tempo medio di arrivo $\lambda$|  |
-| Tempo medio di servizio $T_s$ |  |
-| Tempo medio di interarrivo $\mu$|  |
-| Intensità del traffico di sistema $\rho$|  |
+| Tempo medio di arrivo $\lambda$| 0,587 |
+| Tempo medio di servizio $T_s$ | 10 |
+| Tempo medio di interarrivo $\mu$| 0,066 |
 | Numero medio di utenti nel sistema $N$|  |
 | Numero medio di utenti in coda $W$| |
 | Tempo medio di risposta $R$ |  |
 | Tempo medio atteso in coda $T_w$|  |
 | Utilizzazione $U$|  |
 
+### **Reparto Gastronomia** $M/M/2$
 |**Metrica**|**Valore**|
 |   -   |   -   |
-| Tempo medio di arrivo $\lambda$|  |
-| Tempo medio di servizio $T_s$ |  |
-| Tempo medio di interarrivo $\mu$|  |
-| Intensità del traffico di sistema $\rho$|  |
+| Tempo medio di arrivo $\lambda$| 0,209 |
+| Tempo medio di servizio $T_s$ | 2 |
+| Tempo medio di interarrivo $\mu$| 0,5 |
+| Intensità del traffico di sistema $\rho$| 0,209 |
 | Numero medio di utenti nel sistema $N$|  |
 | Numero medio di utenti in coda $W$| |
 | Tempo medio di risposta $R$ |  |
 | Tempo medio atteso in coda $T_w$|  |
 | Utilizzazione $U$|  |
 
+### **Cassa** $M/M/2$
 |**Metrica**|**Valore**|
 |   -   |   -   |
-| Tempo medio di arrivo $\lambda$ |  |
-| Tempo medio di servizio $T_s$ |  |
-| Tempo medio di interarrivo $\mu$ |  |
-| Intensità del traffico di sistema $\rho$ |  |
+| Tempo medio di arrivo $\lambda$ | 0,616 |
+| Tempo medio di servizio $T_s$ | 2 |
+| Tempo medio di interarrivo $\mu$ | 0,5 |
+| Intensità del traffico di sistema $\rho$ | 0,616 |
 | Numero medio di utenti nel sistema $N$ |  |
 | Numero medio di utenti in coda $W$ | |
 | Tempo medio di risposta $R$ |  |
