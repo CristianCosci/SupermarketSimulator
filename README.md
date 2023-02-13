@@ -130,37 +130,35 @@ Il parametro generale $\lambda$ per gli arrivi nel supermercato è circa $0,61 m
 | Tempo medio di arrivo $\lambda$| 0,587 |
 | Tempo medio di servizio $T_s$ | 10 |
 | Tempo medio di interarrivo $\mu$| 0,066 |
-| Numero medio di utenti nel sistema $N$|  |
-| Numero medio di utenti in coda $W$| |
-| Tempo medio di risposta $R$ |  |
-| Tempo medio atteso in coda $T_w$|  |
-| Utilizzazione $U$|  |
+| Intensità del traffico di sistema $\rho$| 8,807 |
+| Numero medio di utenti nel sistema $N$| 8,807 |
+| Tempo medio di risposta $R$ | 0,066 |
 
 ### **Reparto Gastronomia** $M/M/2$
 |**Metrica**|**Valore**|
 |   -   |   -   |
-| Tempo medio di arrivo $\lambda$| 0,209 |
-| Tempo medio di servizio $T_s$ | 2 |
-| Tempo medio di interarrivo $\mu$| 0,5 |
+| Tempo medio di arrivo $\lambda$| 0,209 $min^-1$|
+| Tempo medio di servizio $T_s$ | 2 $min$ |
+| Tempo medio di interarrivo $\mu$| 0,5 $min^-1$|
 | Intensità del traffico di sistema $\rho$| 0,209 |
 | Numero medio di utenti nel sistema $N$|  |
 | Numero medio di utenti in coda $W$| |
 | Tempo medio di risposta $R$ |  |
 | Tempo medio atteso in coda $T_w$|  |
-| Utilizzazione $U$|  |
+| Utilizzazione $U$| 0,209 |
 
 ### **Cassa** $M/M/2$
 |**Metrica**|**Valore**|
 |   -   |   -   |
-| Tempo medio di arrivo $\lambda$ | 0,616 |
-| Tempo medio di servizio $T_s$ | 2 |
-| Tempo medio di interarrivo $\mu$ | 0,5 |
+| Tempo medio di arrivo $\lambda$ | 0,616 $min^-1$|
+| Tempo medio di servizio $T_s$ | 2 $min$|
+| Tempo medio di interarrivo $\mu$ | 0,5 $min^-1$ |
 | Intensità del traffico di sistema $\rho$ | 0,616 |
 | Numero medio di utenti nel sistema $N$ |  |
 | Numero medio di utenti in coda $W$ | |
 | Tempo medio di risposta $R$ |  |
 | Tempo medio atteso in coda $T_w$ |  |
-| Utilizzazione $U$ |  |
+| Utilizzazione $U$ | 0,209 |
 
 
 ## **Codifica del Modello** :computer:
