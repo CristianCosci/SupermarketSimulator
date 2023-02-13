@@ -62,9 +62,9 @@ Il numero medio di persone al minuto che arrivano al sistema è circa 0,61 (uno 
 I tempi di servizio variano a seconda dell’operazione effettuata e sono riportati qui di seguito:
 |    **Reparto**    |**Tempo di Servizio Medio**| **Servienti** |modello di coda|
 | -                 | -                         | -             | - |
-|  **Gastronomia**  | 3 minuti                  | 1             | $m/m/2$ |
+|  **Gastronomia**  | 3 minuti                  | 2             | $m/m/2$ |
 | **Scaffali**      | 15 minuti                 | $\infty$      | $m/m/\infty$
-| **Cassa**         | 190 secondi                  | 1             | $m/m/2$ |
+| **Cassa**         | 190 secondi                  | 2             | $m/m/2$ |
 
 ### **Convalida della Distribuzione Teorica** :round_pushpin:
 A questo punto, è necessario determinare la Distribuzione Teorica corrispondente all'arrivo dei clienti nel supermercato. Per fare ciò, è necessario trovare un'ipotetica distribuzione ed effettuarne la relativa convalida. Qui di seguito sono riportati gli arrivi per ogni intervallo registrato:
