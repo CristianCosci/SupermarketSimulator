@@ -249,6 +249,8 @@ Un breve sunto dei risultati che abbiamo ottenuto (il report completo della simu
 |Number Waiting| 0.8387|0.13|
 |Resource Utilization| 0.5835| 0.02|
 
+<img src="imgs/utilization_chart.png" width="60%" align="right">
+
 **Cassa 2**
 |Metrica|Average|Half Width|
 | -----| ----- | ------|
