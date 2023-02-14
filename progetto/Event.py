@@ -1,16 +1,21 @@
+from random import choice
+
+
 class Event:
-    ARRIVAL = 0
-    DEPARTURE = 1
-    SIM_END = 2
-    __strings = ["ARRIVAL", "DEPARTURE", "SIM_END"]
 
-    def __init__(self, type: int, time: int):
-        self.type = type
+    def __init__(self, time: int, id=0):
         self.time = time
-  
+        self.dep_time = 0
+        self.id=id
+        self.history = []
+        self.icon = choice(['🧔', '👩', '👨', '🧕']) 
+    
     def __str__(self) -> str:
-        return f"Event {self.__strings[self.type]} @ {self.time}"
-
+        return f"{self.icon} <💳: {self.id}, 🟢: {self.time}, 🔴: {self.dep_time}, 📊: {self.history}>"
+    
     def __repr__(self) -> str:
-        return f"Event <type: {self.__strings[self.type]}, time: {self.time}>"
+        return f"Event[{self.id}]<start: {self.time}, end:{self.dep_time}, history: {self.history}>"
+    
 
+    
+    
