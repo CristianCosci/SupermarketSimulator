@@ -237,7 +237,31 @@ Con questa configurazione possiamo simulare le 4 ore di lavoro del supermercato 
 
 Un breve sunto dei risultati che abbiamo ottenuto (il report completo della simulazione può essere consultato tramite il file FILE):
 
+**System**
+|Metrica|Average|
+| -----| ----- |
+|Number Out | 93
 
+**Cassa 1**
+|Metrica|Average|Half Width|
+| -----| ----- | ------|
+|Waiting Time | 3.8434|0.48|
+|Number Waiting| 0.8387|0.13|
+|Resource Utilization| 0.5835| 0.02|
+
+**Cassa 2**
+|Metrica|Average|Half Width|
+| -----| ----- | ------|
+|Waiting Time | 3.9363|0.63|
+|Number Waiting| 0.8193|0.14|
+|Resource Utilization| 0.5741| 0.02|
+
+**Gastronomia**
+|Metrica|Average|Half Width|
+| -----| ----- | ------|
+|Waiting Time | 1.6546|0.2|
+|Number Waiting| 0.2359|0.04|
+|Resource Utilization| 0.3979| 0.02|
 
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 
