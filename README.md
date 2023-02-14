@@ -225,6 +225,20 @@ Utilizzando il pratico editor per simulatori che offre Arena, tramite un semplic
 
 ## **Simulazione** :bar_chart:
 
+Una volta completata la codifica del modello, abbiamo avviato la simulazione facendo bene attenzione a scegliere prima le varie configurazioni per i parametri del _Metodo delle Prove Ripetute_:
+
+- `Number of Replication`: `100`
+- `Warmup Period`: `0.0` - `Time Units`: `Minutes`
+- `Replication Length`: `1` - `Time Units`: `Days`
+- `Hours per Day`: `4`
+- `Base Time Units`: `Minutes`
+
+Con questa configurazione possiamo simulare le 4 ore di lavoro del supermercato che abbiamo monitorato nella fase iniziale, per diversi giorni lavorativi.
+
+Un breve sunto dei risultati che abbiamo ottenuto (il report completo della simulazione può essere consultato tramite il file FILE):
+
+
+
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 
 ## **Conclusioni** :end:
