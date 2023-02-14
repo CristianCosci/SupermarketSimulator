@@ -163,6 +163,66 @@ Il parametro generale $\lambda$ per gli arrivi nel supermercato è circa $0,61 m
 
 ## **Codifica del Modello** :computer:
 
+Per la codifica del modello abbiamo optato per l'utilizzo del software [Arena Simulation Software](https://www.rockwellautomation.com/en-us/products/software/arena-simulation.html) in quanto, seppur non essendo uno strumento opens-source, offre una licenza gratuita per gli studenti e risulta essere uno strumento molto potente (nonostante le limitazioni della licenza free).
+
+Utilizzando il pratico editor per simulatori che offre Arena, tramite un semplice drag-n-drop siamo riusciti a modellare il simulatore come segue:
+
+- **Modulo _"Create"_ (`Ingresso`):** è il modulo che si occupa di generare gli arrivi dei clienti al supermercato con i seguenti parametri:
+  - `type`: `Random(EXPO)`
+  - `Value`: `2.42`
+  - `Units`: `Minutes`
+  - tutti gli altri sono inalterati
+- **Modulo _"Decide"_:** permette ai clienti di scegliere se recarsi al reparto _Scaffali_, con l'80% di probabilità, o alla _Gastronomia_, con il restante 20% di probabilità. Ha i seguenti parametri:
+  - `type`: `2-way Chance`
+  - `Percent True`: `80`
+- **Modulo _"Process"_ (`Scaffali`):** rappresenta gli scaffali del supermercato, si suppone non esserci coda e un _Cliente_ in media trascorre qui _8 minuti_. È stato realizzato con i parametri:
+  - `type`: `Standard` 
+  - `Action`: `Delay` 
+  - `Delay Type`: `Expression` 
+  - `Units`: `Minutes`
+  - `Allocation`: `Value Added` 
+  - `Expression`: `EXPO(8)` 
+- **Modulo _"Process"_ (`Gastronomia`):** rappresenta il reparto gastronomia, con al suo interno un solo addetto responsabile di servire i Clienti, che, in media, vengono serviti in _3 minuti_. Il modulo ha i seguenti parametri:
+  - `type`: `Standard` 
+  - `Action`: `Seize Delay Release`
+  - `Priority`: `Medium(2)`
+  - `Resources`:
+    - `Resource, Addetto, 1` 
+  - `Delay Type`: `Expression` 
+  - `Units`: `Minutes`
+  - `Allocation`: `Value Added` 
+  - `Expression`: `EXPO(3)` 
+- **Modulo _"Decide"_:** questo modulo permette ai _Clienti_ di poter scegliere se muoversi dal reparto _Scaffali_ alle _Casse_, con una probabilità dell'85%, o di dirigersi verso la _Gastronomia_, con il restante 10%. Ha i seguenti parametri: 
+  - `type`: `2-way Chance`
+  - `Percent True`: `85`
+- **Modulo _"Decide"_:** questo permette ai Clienti di poter muoversi dalla Gastronomia alle Casse, con l'80% di probabilità, o verso gli Scaffali, con il restante 20%. È composto dai seguenti parametri:
+  - `type`: `2-way Chance`
+  - `Percent True`: `80`
+- **Modulo _"Decide"_:** questa ultima scelta permette al _Cliente_ di decidere in quale _Cassa_ pagare. La probabilità di scelta è equamente distribuita tra le casse con il 50%. Comprende i parametri:
+  - `type`: `2-way Chance`
+  - `Percent True`: `50`
+- **Modulo _"Process"_ (`Cassa 1`):** questo nodo rappresenta la prima _Cassa_ del supermercato in cui i Clienti possono pagare. È realizzata con i seguenti parametri:
+  - `type`: `Standard` 
+  - `Action`: `Seize Delay Release`
+  - `Priority`: `Medium(2)`
+  - `Resources`:
+    - `Resource, Cassiere, 1` 
+  - `Delay Type`: `Expression` 
+  - `Units`: `Minutes`
+  - `Allocation`: `Value Added` 
+  - `Expression`: `EXPO(3)` 
+- **Modulo _"Process"_ (`Cassa 2`):** questo nodo rappresenta la seconda _Cassa_ del supermercato in cui i Clienti possono pagare. È realizzata con i seguenti parametri:
+  - `type`: `Standard` 
+  - `Action`: `Seize Delay Release`
+  - `Priority`: `Medium(2)`
+  - `Resources`:
+    - `Resource, Cassiere, 1` 
+  - `Delay Type`: `Expression` 
+  - `Units`: `Minutes`
+  - `Allocation`: `Value Added` 
+  - `Expression`: `EXPO(3)` 
+- **Modulo _"Dispose"_ (`Uscita`):** è il nodo finale che modella l'uscita del supermercato.
+
 ## **Simulazione** :bar_chart:
 
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
