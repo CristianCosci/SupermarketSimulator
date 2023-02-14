@@ -1,16 +1,17 @@
 from Event import Event
 from Node import Node
+from typing import TypedDict, Tuple, Union
 
 
 class Starter(Node):
 
-    def __init__(self, gen, limit, neighbors) -> None:
+    def __init__(self, gen, limit, neighbors: Union['Node', TypedDict('Neighbors', {'True': Tuple[int, 'Node'], 'False': Tuple[int, 'Node']})]) -> None:
         super().__init__(gen, neighbors, name="Starter")
         self.counter = 0
         self.limit = limit
         self.time = 0.0
 
-    def start(self):
+    def start(self) -> None:
         while self.time <= self.limit:
             evt = Event(self.time, self.counter)
             
@@ -20,7 +21,6 @@ class Starter(Node):
 
             self.time += self.generator.generate()
             self.counter += 1
-
              
             if isinstance(self.neighbors, Node):
                 print(f"\t{evt.icon} ➡️ {self.neighbors}")

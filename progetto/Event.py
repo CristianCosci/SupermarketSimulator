@@ -1,4 +1,5 @@
 from random import choice
+from typing import List
 
 
 class Event:
@@ -7,7 +8,7 @@ class Event:
         self.time = time
         self.dep_time = 0
         self.id=id
-        self.history = []
+        self.history: List[str] = []
         self.icon = choice(['🧔', '👩', '👨', '🧕']) 
     
     def __str__(self) -> str:

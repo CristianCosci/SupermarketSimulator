@@ -1,4 +1,6 @@
 from Node import Node
+from Event import Event
+from typing import List
 
 
 class Ender(Node):
@@ -6,9 +8,9 @@ class Ender(Node):
     def __init__(self) -> None:
         super().__init__(None, None, "Ender")
         self.counter = 0
-        self.history = []
+        self.history: List[Event] = []
 
-    def schedule(self, evt):
+    def schedule(self, evt: Event) -> None:
         super().schedule(evt)
 
         evt.dep_time += evt.time
