@@ -32,7 +32,7 @@ Una volta presi i beni di interesse, il cliente deve recarsi alla cassa per paga
 
 Il sistema può quindi essere rappresentato con 3 nodi:
 - **Reparto degli scaffali**: il numero di serventi per questo reparto può essere ipotizzato essere $\infty$ in quando non vi è un limite teorico al numero di clienti che possono contemporaneamente trovarsi in questo nodo. Il limite nell'atto pratico esiste ed è dovuto a limitazioni fisiche ma, per semplificazione verrà considerato un numero di serventi pari a $\infty$
-- **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 2 in quanto ci sono 2 operatori a disposizione dei clienti che servono secondo un ordine FIFO
+- **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 1 in quanto c'è solo un operatore a disposizione dei clienti che li serve secondo un ordine FIFO
 - **Cassa**: il numero di serventi in questo reparto è pari a 2 in quanto il supermercato ha due commessi a disposizione per le casse adibite al pagamento dei beni acquistati da parte dei clienti. Tuttavia, ogni cassa ha una propria coda, quindi il modello deve essere mappato come un sistema dato da 2 nodi $M/M/1$.
 
 Risulta necessario conoscere i tempi di servizio, la distribuzione degli arrivi al supermercato e il relativo utilizzo dei nodi da parte degli utenti. Ulteriori informazioni sulla raccolta dati e sui tempi di servizio del sistema, sono disponibili nella sezione [Raccolta Dati](#raccolta-dati-ledger).
