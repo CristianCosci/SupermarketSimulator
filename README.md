@@ -315,7 +315,7 @@ I **Parametri Teorici** dei nodi relativi alla cassa diventano i seguenti:
 
 I risultati ottenuti dalle simulazioni sono i seguenti:
 - **System**
-  Possiamo notare come il miglioramento delle prestazioni del sistema è minimo, in quanto si abbassa in media di circa soli $2 min$.
+  Possiamo notare come il miglioramento delle prestazioni del sistema è minimo, in quanto si abbassa in media di circa soli $2$ $min$.
 
   |Metrica|Average|
   | -----| ----- |
@@ -343,6 +343,10 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   |$T_w$ (Average Waiting Time)| 1.7880|0.25| 2.1126 | 0.2853|
   |$W$ (Average Number of Clients Waiting)| 0.2619|0.04| 0.2910| 0.0503|
   |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132| 0.0167|
+
+- **Grafici** 📊
+  - **Confronto tra Tempi di Attesa** $\mathbf{T_w}$ <br> <img src="imgs/confronto_casse_tw.png" width="70%">
+  - **Confronto tra Utilizzazione** $\mathbf{\rho}$ <br> <img src="imgs/confronto_casse_p.png" width="70%">
 
 ## **Conclusioni** :end:
 In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analazzito presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 
