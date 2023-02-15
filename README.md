@@ -345,7 +345,7 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132| 0.0167|
 
 - **Grafici** 📊
-  - **Confronto tra Tempi di Attesa** $\mathbf{T_w}$ <br> <img src="imgs/confronto_casse_tw.png" width="100%">
+  - **Confronto tra Tempi di Attesa** $\mathbf{T_w}$ <br> <img src="imgs/confronto_casse_tw.png" width="70%">
   - **Confronto tra Utilizzazione** $\mathbf{\rho}$ <br> <img src="imgs/confronto_casse_p.png" width="70%">
 
 ## **Conclusioni** :end:
