@@ -288,7 +288,7 @@ Nelle tabelle successive verranno riportati entrambi i valori di confidenza per 
   |$\rho$ (Resource Utilization)| 0.4045| 0.02| 0.4089| 0.0167|
 
 - **Grafici** :bar_chart::
-  - **Utilizzo delle risorse** <br><img src="imgs/utilization_chart.png" width="60%">
+  - **Utilizzo delle risorse** <br><img src="imgs/utilization_chart.png" width="70%">
   - **Cassa Teorico Vs Simulato** <br><img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
   - **Gastronomia Teorico Vs Simulato** <br><img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
 
@@ -297,7 +297,7 @@ Possiamo notare come il modello rispetta già quelli che potrebbero essere dei l
 Per mostrare le variazioni delle performance del sistema abbiamo comunque deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.<br>
 Il nuovo modello viene così rappresentato:
 
-<img src="imgs/modello_migliorato.png" width="70%">
+<img src="imgs/modello_migliorato.png" width="80%">
 
 I **Parametri Teorici** dei nodi relativi alla cassa diventano i seguenti:
 - **Cassa** 1-2-3 $M/M/1$
@@ -345,7 +345,7 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132| 0.0167|
 
 - **Grafici** 📊
-  - **Confronto tra Tempi di Attesa** $\mathbf{T_w}$ <br> <img src="imgs/confronto_casse_tw.png" width="70%">
+  - **Confronto tra Tempi di Attesa** $\mathbf{T_w}$ <br> <img src="imgs/confronto_casse_tw.png" width="100%">
   - **Confronto tra Utilizzazione** $\mathbf{\rho}$ <br> <img src="imgs/confronto_casse_p.png" width="70%">
 
 ## **Conclusioni** :end:
