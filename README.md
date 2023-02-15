@@ -250,10 +250,10 @@ $$\overline{x} \pm \mu_{\frac{\alpha}{2}} \frac{s}{\sqrt{n}}$$
 dove $n$ è il numero di osservazioni e $\mu_{\frac{\alpha}{2}}$ è letto dalla tavola della distribuzione normale. <br>
 Per trovare l’intervallo al 90% calcoliamo prima $s$ che è uguale a
 
-$$s = \frac{1}{1.96} \cdot \sqrt{100} \cdot half\\_width(95\%) = y$$
+$$s = \frac{1}{1.96} \cdot \sqrt{100} \cdot half\\_width(95\\%) = y$$
 si può ora calcolare il nuovo `Half Width`:
 
-$$half\\_width(90\%) = 1.645 \cdot \frac{y}{\sqrt{100}} $$
+$$half\\_width(90\\%) = 1.645 \cdot \frac{y}{\sqrt{100}} $$
 
 Nelle tabelle successive verranno riportati entrambi i valori di confidenza per avere un resoconto più completo.
 
