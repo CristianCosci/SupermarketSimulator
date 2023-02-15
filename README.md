@@ -269,14 +269,10 @@ Il report completo della simulazione può essere consultato tramite il file FILE
   |$W$ (Average Number of Clients Waiting)| 0.2674|0.04| 0.2829|
   |$\rho$ (Resource Utilization)| 0.4045| 0.02| 0.4089|
 
-- Grafici:
-  - **Utilizzo delle risorse** <br>
-  <img src="imgs/utilization_chart.png" width="60%">
-  - **Cassa Teorico Vs Simulato** <br>
-  <img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
-  - **Gastronomia Teorico Vs Simulato** <br> 
-    <img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
-
+- **Grafici** :bar_chart::
+  - **Utilizzo delle risorse** <br><img src="imgs/utilization_chart.png" width="60%">
+  - **Cassa Teorico Vs Simulato** <br><img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
+  - **Gastronomia Teorico Vs Simulato** <br><img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
    
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `15,9064 min` con soli `5,1339 min` di attesa. <br>
