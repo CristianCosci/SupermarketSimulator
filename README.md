@@ -239,9 +239,23 @@ Una volta completata la codifica del modello, abbiamo selezionato i parametri di
 
 Con questa configurazione possiamo simulare le 4 ore pomeridiane di lavoro del supermercato che abbiamo monitorato nella fase iniziale, per diversi giorni lavorativi.
 
-### **Analisi dei Risultati**
+### **Analisi dei Risultati e Convalida**
 
-Il report completo della simulazione può essere consultato tramite il file FILE mentre, qui di seguito sono riportati e analizzati i risultati principali:
+Il report completo della simulazione può essere consultato tramite il file `report_simulazione_carrefour.pdf` nella cartella `simulator/` :open_file_folder: mentre, qui di seguito sono riportati e analizzati i risultati principali.
+
+Per quando riguarda la **Convalida**, il software Arena restituisce mediante il parametro `Half Width` un range per la convalida dei risultati con una confidenza del $95\%$. Questo significa che, dato un parametro di valore $x$, il range di confidenza per la convalida sarà dato dall'intervallo $[x-half\\_width, \ x + half\\_width]$. Nel caso in cui si voglia portare il livello di confidenza al $90\%$ si può semplicemente applicare l'inversa della seguente formula, facendo riferimento ai valori dell'apposita tabella per la _Distribuzione Cumulativa Normale_:
+
+$$\overline{x} \pm \mu_{\frac{\alpha}{2}} \frac{s}{\sqrt{n}}$$
+
+dove $n$ è il numero di osservazioni e $\mu_{\frac{\alpha}{2}}$ è letto dalla tavola della distribuzione normale. <br>
+Per trovare l’intervallo al 90% calcoliamo prima $s$ che è uguale a
+
+$$s = \frac{1}{1.96} \cdot \sqrt{100} \cdot half\\_width(95\%) = y$$
+si può ora calcolare il nuovo `Half Width`:
+
+$$half\\_width(90\%) = 1.645 \cdot \frac{y}{\sqrt{100}} $$
+
+Nelle tabelle successive verranno riportati entrambi i valori di confidenza per avere un resoconto più completo.
 
 - **System**
   Indica il numero di utenti processati in media dal sistema. Possiamo notare che rispetta perfettamente il numero di frequenze totali raccolte dalle osservazioni.
@@ -253,33 +267,30 @@ Il report completo della simulazione può essere consultato tramite il file FILE
   |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 15.9064|
 
 - **Cassa 1**
-  |Metrica|Average|Half Width| *Teorico*|
-  | -----| ----- | ------| -|
-  |$T_w$ (Average Waiting Time)| 4.4847|0.60| 4.8913|
-  |$W$ (Average Number of Clients Waiting)| 1.0013|0.16| 1.0106|
-  |$\rho$ (Resource Utilization)| 0.6227| 0.02| 0.6198|
+  |Metrica|Average|Half Width 95%| *Teorico*| Half Width 90% |
+  | -----| ----- | ------| -| -|
+  |$T_w$ (Average Waiting Time)| 4.4847|0.60| 4.8913| 0.5035|
+  |$W$ (Average Number of Clients Waiting)| 1.0013|0.16| 1.0106| 0.1342|
+  |$\rho$ (Resource Utilization)| 0.6227| 0.02| 0.6198| 0.0167|
 
 - **Cassa 2**
-  |Metrica|Average|Half Width| *Teorico*|
-  | -----| ----- | ------| - |
-  |$T_w$ (Average Waiting Time)| 4.3785|0.65| 4.8913|
-  |$W$ (Average Number of Clients Waiting)| 0.9397|0.16| 1.0106|
-  |$\rho$ (Resource Utilization)| 0.6046| 0.02| 0.6198|
+  |Metrica|Average|Half Width| *Teorico*| Half Width 90% |
+  | -----| ----- | ------| - | -|
+  |$T_w$ (Average Waiting Time)| 4.3785|0.65| 4.8913| 0.5035|
+  |$W$ (Average Number of Clients Waiting)| 0.9397|0.16| 1.0106| 0.1342|
+  |$\rho$ (Resource Utilization)| 0.6046| 0.02| 0.6198| 0.0167|
 
 - **Gastronomia**
-  |Metrica|Average|Half Width| *Teorico*|
-  | -----| ----- | ------| -|
-  |$T_w$ (Average Waiting Time)| 1.9050|0.28| 2.0758|
-  |$W$ (Average Number of Clients Waiting)| 0.2674|0.04| 0.2829|
-  |$\rho$ (Resource Utilization)| 0.4045| 0.02| 0.4089|
+  |Metrica|Average|Half Width| *Teorico*| Half Width 90% |
+  | -----| ----- | ------| -| -|
+  |$T_w$ (Average Waiting Time)| 1.9050|0.28| 2.0758| 0.2350|
+  |$W$ (Average Number of Clients Waiting)| 0.2674|0.04| 0.2829| 0.0335|
+  |$\rho$ (Resource Utilization)| 0.4045| 0.02| 0.4089| 0.0167|
 
 - **Grafici** :bar_chart::
   - **Utilizzo delle risorse** <br><img src="imgs/utilization_chart.png" width="60%">
   - **Cassa Teorico Vs Simulato** <br><img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
   - **Gastronomia Teorico Vs Simulato** <br><img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
-  
-### **Convalida della Simulazione**
-todo
 
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `15,9064 min` con soli `5,1339 min` di attesa. <br>
@@ -313,27 +324,25 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 13,8056|
 
 - **Cassa 1**
-  |Metrica|Average|Half Width| *Teorico*|
-  | -----| ----- | ------| -|
-  |$T_w$ (Average Waiting Time)| 2.1168|0.34| 2.1126 |
-  |$W$ (Average Number of Clients Waiting)| 0.3011|0.06| 0.2910|
-  |$\rho$ (Resource Utilization)| 0.4128| 0.02| 0.4132|
+  |Metrica|Average|Half Width| *Teorico*| Half Width 90% |
+  | -----| ----- | ------| -| -|
+  |$T_w$ (Average Waiting Time)| 2.1168|0.34| 2.1126 | 0.2853|
+  |$W$ (Average Number of Clients Waiting)| 0.3011|0.06| 0.2910| 0.0503|
+  |$\rho$ (Resource Utilization)| 0.4128| 0.02| 0.4132| 0.0167|
 
 - **Cassa 2**
-  |Metrica|Average|Half Width|*Teorico*|
-  | -----| ----- | ------|-|
-  |$T_w$ (Average Waiting Time)| 2.3086|0.41| 2.1126 |
-  |$W$ (Average Number of Clients Waiting)| 0.3537|0.07| 0.2910|
-  |$\rho$ (Resource Utilization)| 0.4259| 0.02| 0.4132|
+  |Metrica|Average|Half Width|*Teorico*| Half Width 90% |
+  | -----| ----- | ------|-| -|
+  |$T_w$ (Average Waiting Time)| 2.3086|0.41| 2.1126 | 0.2853|
+  |$W$ (Average Number of Clients Waiting)| 0.3537|0.07| 0.2910| 0.0503|
+  |$\rho$ (Resource Utilization)| 0.4259| 0.02| 0.4132| 0.0167|
 
 - **Cassa 3**
-  |Metrica|Average|Half Width|*Teorico*|
-  | -----| ----- | ------|-|
-  |$T_w$ (Average Waiting Time)| 1.7880|0.25| 2.1126 |
-  |$W$ (Average Number of Clients Waiting)| 0.2619|0.04| 0.2910|
-  |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132|
-
-### Convalida della Simulazione
+  |Metrica|Average|Half Width|*Teorico*| Half Width 90% |
+  | -----| ----- | ------|-| -|
+  |$T_w$ (Average Waiting Time)| 1.7880|0.25| 2.1126 | 0.2853|
+  |$W$ (Average Number of Clients Waiting)| 0.2619|0.04| 0.2910| 0.0503|
+  |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132| 0.0167|
 
 ## **Conclusioni** :end:
 In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analazzito presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 
