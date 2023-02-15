@@ -2,17 +2,15 @@
 ## **Indice**
 - [Introduzione](#introduzione)
 - [Astrazione del modello](#astrazione-del-modello-pencil2)
-- [Raccolta dei dati](#raccolta-dati-ledger)
+- [Raccolta dei dati](#raccolta-dati-notebook)
     - [Convalida della distribuzione Teorica](#convalida-della-distribuzione-teorica-round_pushpin)
 - [Analisi matematica del Modello](#analisi-matematica-del-modello-shipit-pencil)
   - [Parametri generali del Sistema](#parametri-generali-del-sistema-slot_machine)
   - [Calcolo dei Parametri Teorici del Modello](#calcolo-dei-parametri-teorici-del-modello)
 - [Codifica del modello](#codifica-del-modello-computer)
 - [Simulazione](#simulazione-bar_chart)
-    - [Analisi dei Risultati](#analisi-dei-risultati)
-    - [Convalida della Simulazione](#convalida-della-simulazione)
+    - [Analisi dei Risultati e Convalida](#analisi-dei-risultati-e-convalida)
 - [Proposte di miglioramento del modello](#proposte-di-miglioramento-del-modello-chart_with_upwards_trend)
-    - [Convalida della Simulazione](#convalida-della-simulazione-1)
 - [Conclusioni](#conclusioni-end)
 
 <hr>
