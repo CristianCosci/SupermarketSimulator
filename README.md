@@ -1,18 +1,19 @@
 # **Supermarket Simulator** :cyclone:
 ## **Indice**
 - [Introduzione](#introduzione)
-- [Astrazione del modello](#astrazione-del-modello)
+- [Astrazione del modello](#astrazione-del-modello-pencil2)
 - [Raccolta dei dati](#raccolta-dati-ledger)
-    - [Parametri generali del Sistema](#parametri-generali-del-sistema-slot_machine)
     - [Convalida della distribuzione Teorica](#convalida-della-distribuzione-teorica-round_pushpin)
-- [Analisi matematica del Modello](#)
-- [Codifica del modello](#)
-- [Simulazione](#)
-    - [Analisi della Simulazione](#)
-    - [Convalida della Simulazione](#)
-- [Proposte di miglioramento del modello](#)
-    - [Simulazione e Analisi](#)
-- [Conclusioni](#)
+- [Analisi matematica del Modello](#analisi-matematica-del-modello-shipit-pencil)
+  - [Parametri generali del Sistema](#parametri-generali-del-sistema-slot_machine)
+  - [Calcolo dei Parametri Teorici del Modello](#calcolo-dei-parametri-teorici-del-modello)
+- [Codifica del modello](#codifica-del-modello-computer)
+- [Simulazione](#simulazione-bar_chart)
+    - [Analisi dei Risultati](#analisi-dei-risultati)
+    - [Convalida della Simulazione](#convalida-della-simulazione)
+- [Proposte di miglioramento del modello](#proposte-di-miglioramento-del-modello-chart_with_upwards_trend)
+    - [Convalida della Simulazione](#convalida-della-simulazione-1)
+- [Conclusioni](#conclusioni-end)
 
 <hr>
 
@@ -55,19 +56,6 @@ Le 4 ore sono state suddivise in intervalli da 15 minuti l'uno, e qui di seguito
 - Numero minimo di frequenze osservate in un intervallo: 0
 - Numero massimo di frequenze osservate in un intervallo: 16
 
-### **Parametri Generali del Sistema** :slot_machine:
-Nella fase di raccolta dati sono stati ricavati, dalle osservazioni, anche i Parametri Generali del Sistema.
-
-Il numero medio di persone al minuto che arrivano al sistema è circa 0,61 (uno ogni $2,4$ _min_ $\rightarrow$ uno ogni $97,29$ _secondi_), infatti nelle 4 ore prese in esame, sono arrivati 148 clienti. 
-
-I tempi di servizio variano a seconda dell’operazione effettuata e sono riportati qui di seguito:
-|    **Reparto**    |**Tempo di Servizio Medio**| **Servienti** |modello di coda|
-| -                 | -                         | -             | - |
-|  **Gastronomia**  | 3 minuti                  | 1             | $m/m/1$ |
-| **Scaffali**      | 8 minuti                  | $\infty$      | $m/m/\infty$
-| **Cassa 1**       | 3 mnuti                   | 1             | $m/m/1$ |
-| **Cassa 2**       | 3 mnuti                   | 1             | $m/m/1$ |
-
 ### **Convalida della Distribuzione Teorica** :round_pushpin:
 A questo punto, è necessario determinare la Distribuzione Teorica corrispondente all'arrivo dei clienti nel supermercato. Per fare ciò, è necessario trovare un'ipotetica distribuzione ed effettuarne la relativa convalida. Qui di seguito sono riportati gli arrivi per ogni intervallo registrato:
 
@@ -102,6 +90,20 @@ Nel grafico :bar_chart: qui di seguito sono riportati i dati relativi alle frequ
 
 ## **Analisi Matematica del Modello** :shipit: :pencil:
 
+### **Parametri Generali del Sistema** :slot_machine:
+Nella fase di raccolta dati sono stati ricavati, dalle osservazioni, anche i Parametri Generali del Sistema.
+
+Il numero medio di persone al minuto che arrivano al sistema è circa $0.41$ (uno ogni $2,4$ _min_ $\rightarrow$ uno ogni $144$ _secondi_), infatti nelle 4 ore prese in esame, sono arrivati 99 clienti. 
+
+I tempi di servizio variano a seconda dell’operazione effettuata e sono riportati qui di seguito:
+|    **Reparto**    |**Tempo di Servizio Medio**| **Servienti** |modello di coda|
+| -                 | -                         | -             | - |
+|  **Gastronomia**  | 3 minuti                  | 1             | $m/m/1$ |
+| **Scaffali**      | 8 minuti                  | $\infty$      | $m/m/\infty$
+| **Cassa 1**       | 3 mnuti                   | 1             | $m/m/1$ |
+| **Cassa 2**       | 3 mnuti                   | 1             | $m/m/1$ |
+
+### **Calcolo dei Parametri Teorici del modello**
 Dalla struttura del modello si può dedurre che si tratta di un sistema a **reti di Jackson**:
 *a classe dei modelli a rete di code di **Jackson** è formata da reti aperte, con centri di **servizio esponenziali**, **arrivi Poissoniani** e **topologia probabilistica** arbitraria indipendente dallo stato della rete.* <br>
 Questo perchè vi sono definite delle probabilità per cui un cliente può passare ad un altro nodo dopo averne usufruito di un altro. Ad esempio i clienti hanno una probabilità del $20\%$ di usufruire del `Reparto Scaffali` dopo aver usufruito del `Reparto Gastronomia`.
@@ -124,11 +126,11 @@ dove:
 - 3 = `Reparto Gastronomia`
 - 4 = `Cassa 1-2` (la probabilità di una singola cassa corrisponde alla metà della probabilità presente nella routing table)
 
-Il parametro generale $\lambda$ per gli arrivi nel supermercato è circa $0,413 min^{-1}.$
+Il parametro generale $\lambda$ per gli arrivi nel supermercato è circa $0,413$ $min^{-1}.$
 
 Qui di seguito sono riportati i **Parametri Teorici principali**, calcolati dalle osservazioni, per ogni nodo del sistema.
 
-### **Reparto Scaffali** $M/M/\infty$
+#### **Reparto Scaffali** $M/M/\infty$
 |**Metrica**|**Valore**|
 |   -   |   -   |
 | Tempo medio di arrivo $\lambda$ | 0,357 $min^{-1}$ |
@@ -138,7 +140,7 @@ Qui di seguito sono riportati i **Parametri Teorici principali**, calcolati dall
 | Numero medio di utenti nel sistema $N$ | 2,862 |
 | Tempo medio di risposta $R$ | 8 |
 
-### **Reparto Gastronomia** $M/M/1$
+#### **Reparto Gastronomia** $M/M/1$
 |**Metrica**|**Valore**|
 |   -   |   -   |
 | Tempo medio di arrivo $\lambda$ | 0,136 $min^{-1}$ |
@@ -150,7 +152,7 @@ Qui di seguito sono riportati i **Parametri Teorici principali**, calcolati dall
 | Tempo medio di risposta $R$ | 5,075 |
 | Tempo medio atteso in coda $T_w$ | 2,075 |
 
-### **Cassa** 1-2 $M/M/1$
+#### **Cassa** 1-2 $M/M/1$
 |**Metrica**|**Valore**|
 |   -   |   -   |
 | Tempo medio di arrivo $\lambda$ | 0,206 $min^-1$ |
@@ -237,6 +239,8 @@ Una volta completata la codifica del modello, abbiamo selezionato i parametri di
 
 Con questa configurazione possiamo simulare le 4 ore pomeridiane di lavoro del supermercato che abbiamo monitorato nella fase iniziale, per diversi giorni lavorativi.
 
+### **Analisi dei Risultati**
+
 Il report completo della simulazione può essere consultato tramite il file FILE mentre, qui di seguito sono riportati e analizzati i risultati principali:
 
 - **System**
@@ -249,21 +253,21 @@ Il report completo della simulazione può essere consultato tramite il file FILE
   |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 15.9064|
 
 - **Cassa 1**
-  |Metrica|Average|Half Width| Teorico|
+  |Metrica|Average|Half Width| *Teorico*|
   | -----| ----- | ------| -|
   |$T_w$ (Average Waiting Time)| 4.4847|0.60| 4.8913|
   |$W$ (Average Number of Clients Waiting)| 1.0013|0.16| 1.0106|
   |$\rho$ (Resource Utilization)| 0.6227| 0.02| 0.6198|
 
 - **Cassa 2**
-  |Metrica|Average|Half Width| Teorico|
+  |Metrica|Average|Half Width| *Teorico*|
   | -----| ----- | ------| - |
   |$T_w$ (Average Waiting Time)| 4.3785|0.65| 4.8913|
-  |$W$ (Average Number of Clients Waiting)| 0.93397|0.16| 1.0106|
+  |$W$ (Average Number of Clients Waiting)| 0.9397|0.16| 1.0106|
   |$\rho$ (Resource Utilization)| 0.6046| 0.02| 0.6198|
 
 - **Gastronomia**
-  |Metrica|Average|Half Width| Teorico|
+  |Metrica|Average|Half Width| *Teorico*|
   | -----| ----- | ------| -|
   |$T_w$ (Average Waiting Time)| 1.9050|0.28| 2.0758|
   |$W$ (Average Number of Clients Waiting)| 0.2674|0.04| 0.2829|
@@ -273,7 +277,10 @@ Il report completo della simulazione può essere consultato tramite il file FILE
   - **Utilizzo delle risorse** <br><img src="imgs/utilization_chart.png" width="60%">
   - **Cassa Teorico Vs Simulato** <br><img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
   - **Gastronomia Teorico Vs Simulato** <br><img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
-   
+  
+### **Convalida della Simulazione**
+todo
+
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `15,9064 min` con soli `5,1339 min` di attesa. <br>
 Per mostrare le variazioni delle performance del sistema abbiamo comunque deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.<br>
@@ -281,9 +288,7 @@ Il nuovo modello viene così rappresentato:
 
 <img src="imgs/modello_migliorato.png" width="70%">
 
-
-
-I parametri teorici sono i seguenti:
+I **Parametri Teorici** dei nodi relativi alla cassa diventano i seguenti:
 - **Cassa** 1-2-3 $M/M/1$
   |**Metrica**|**Valore**|
   |   -   |   -   |
@@ -303,31 +308,32 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
 
   |Metrica|Average|
   | -----| ----- |
-  |Number Out | 99|
+  |Number Out | 100|
   |**Waiting Time** <br> Tempo medio di attesa di <br> un utente nel sistema| 2.8283|
   |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 13,8056|
 
 - **Cassa 1**
-  |Metrica|Average|Half Width| Teorico|
+  |Metrica|Average|Half Width| *Teorico*|
   | -----| ----- | ------| -|
   |$T_w$ (Average Waiting Time)| 2.1168|0.34| 2.1126 |
   |$W$ (Average Number of Clients Waiting)| 0.3011|0.06| 0.2910|
   |$\rho$ (Resource Utilization)| 0.4128| 0.02| 0.4132|
 
 - **Cassa 2**
-  |Metrica|Average|Half Width|Teorico|
+  |Metrica|Average|Half Width|*Teorico*|
   | -----| ----- | ------|-|
   |$T_w$ (Average Waiting Time)| 2.3086|0.41| 2.1126 |
   |$W$ (Average Number of Clients Waiting)| 0.3537|0.07| 0.2910|
-  |$\rho$ (Resource Utilization)| 0.425| 0.02| 0.4132|
+  |$\rho$ (Resource Utilization)| 0.4259| 0.02| 0.4132|
 
 - **Cassa 3**
-  |Metrica|Average|Half Width|Teorico|
+  |Metrica|Average|Half Width|*Teorico*|
   | -----| ----- | ------|-|
   |$T_w$ (Average Waiting Time)| 1.7880|0.25| 2.1126 |
   |$W$ (Average Number of Clients Waiting)| 0.2619|0.04| 0.2910|
-  |$\rho$ (Resource Utilization)| 0.4090| 0.02| 0.4132|
+  |$\rho$ (Resource Utilization)| 0.4098| 0.02| 0.4132|
 
+### Convalida della Simulazione
 
 ## **Conclusioni** :end:
 In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analazzito presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 

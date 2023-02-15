@@ -23,11 +23,12 @@
     - [ ] Convalidare simulazioni
 - [x] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
     - [x] Inserire diagramma nuovo modello
-    - [ ] Inserire report
+    - [x] Inserire report
     - [x] Fare simulazione
     - [x] Effettuare analisi matematica della proposta di miglioramento
     - [x] Inserire confronto parametri teorici e parametri simulati
     - [ ] Convalida della proposta di miglioramento
-- [ ] Rinominare file analisi matematica excel
-- [ ] Modificare nomi nei report arena
+- [x] Rinominare file analisi matematica excel
+- [x] Modificare nomi nei report arena
 - [x] Conclusioni
+- [ ] :pencil2: Rileggere tutto e correggere errori ortografici  
