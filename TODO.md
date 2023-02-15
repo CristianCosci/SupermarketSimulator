@@ -1,23 +1,31 @@
 # TODO LIST
-- [x] Creare fake data che seguono la distribuzione degli ingressi di google https://www.google.com/search?channel=fs&client=ubuntu&q=conad+mercatale
+- [x] Raccogliere dati
 - [x] Convalidare i dati con la godness of fit con una distribuzione (distribuzione da scegliere tra le più facili, niente hyperexp o cose simili)
 - [x] Creare plot distribuzione e frequenze
 - [x] Confermare validazione di dati con un'altra prova
-    - [ ] Ripulire e abbellire file excel
+    - [x] Ripulire e abbellire file excel
+    - [ ] Caricare file excel relativo ad analisi matematica del modello
 - [x] Definire la struttra del progetto, ad es: vari nodi e modelli di coda
 - [x] Creare un simulatore della distribuzione convalidata che segua i dati
 - [x] Creare diagrammi/disegni di configurazione per il sistema
     - [x] Correggere percentuale dei clienti verso la cassa dal disegno del modello
 - [x] Capire e definire quali metriche calcolare (e trovarne le formule)
 - [x] Inventare dei valori pseudoreali per i parametri di ogni nodo del sistema
-- [ ] Analisi matematica del modello
-    - [ ] Aggiungere routing table
-    - [ ] Parlare del sistema a reti di Jackson
-    - [ ] Calcolare i vari parametri
-- [ ] Creare in Python un simulatore che genera tali ingressi e simuli il supermercat
-- [ ] Fare simulazioni
+- [x] Analisi matematica del modello
+    - [x] Aggiungere routing table
+    - [x] Parlare del sistema a reti di Jackson
+    - [x] Calcolare i vari parametri
+- [ ] Creare in Python un simulatore che genera tali ingressi e simuli il supermercato
+- [x] Creare simulatore con Arena
+- [x] Fare simulazioni
+    - [ ] Inserire report
+    - [ ] Inserire confronto parametri teorici e parametri simulati
     - [ ] Convalidare simulazioni
-- [ ] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
+- [x] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
+    - [ ] Inserire diagramma nuovo modello
+    - [ ] Inserire report
+    - [ ] Fare simulazione
     - [ ] Effettuare analisi matematica della proposta di miglioramento
+    - [ ] Inserire confronto parametri teorici e parametri simulati
     - [ ] Simulazione e convalida della proposta di miglioramento
-- [ ] Conclusioni
+- [x] Conclusioni
