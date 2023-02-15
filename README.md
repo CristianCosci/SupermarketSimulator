@@ -30,7 +30,7 @@ Una volta presi i beni di interesse, il cliente deve recarsi alla cassa per paga
 
 Il sistema può quindi essere rappresentato con 3 nodi:
 - **Reparto degli scaffali**: il numero di serventi per questo reparto può essere ipotizzato essere $\infty$ in quando non vi è un limite teorico al numero di clienti che possono contemporaneamente trovarsi in questo nodo. Il limite nell'atto pratico esiste ed è dovuto a limitazioni fisiche ma, per semplificazione verrà considerato un numero di serventi pari a $\infty$
-- **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 2 in quanto ci sono 2 operatori a disposizione dei clienti che servono secondo un ordine FIFO
+- **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 1 in quanto c'è solo un operatore a disposizione dei clienti che li serve secondo un ordine FIFO
 - **Cassa**: il numero di serventi in questo reparto è pari a 2 in quanto il supermercato ha due commessi a disposizione per le casse adibite al pagamento dei beni acquistati da parte dei clienti. Tuttavia, ogni cassa ha una propria coda, quindi il modello deve essere mappato come un sistema dato da 2 nodi $M/M/1$.
 
 Risulta necessario conoscere i tempi di servizio, la distribuzione degli arrivi al supermercato e il relativo utilizzo dei nodi da parte degli utenti. Ulteriori informazioni sulla raccolta dati e sui tempi di servizio del sistema, sono disponibili nella sezione [Raccolta Dati](#raccolta-dati-ledger).
@@ -98,13 +98,13 @@ I tempi di servizio variano a seconda dell’operazione effettuata e sono riport
 | -                 | -                         | -             | - |
 |  **Gastronomia**  | 3 minuti                  | 1             | $m/m/1$ |
 | **Scaffali**      | 8 minuti                  | $\infty$      | $m/m/\infty$
-| **Cassa 1**       | 3 mnuti                   | 1             | $m/m/1$ |
-| **Cassa 2**       | 3 mnuti                   | 1             | $m/m/1$ |
+| **Cassa 1**       | 3 minuti                   | 1             | $m/m/1$ |
+| **Cassa 2**       | 3 minuti                   | 1             | $m/m/1$ |
 
 ### **Calcolo dei Parametri Teorici del modello**
 Dalla struttura del modello si può dedurre che si tratta di un sistema a **reti di Jackson**:
-*a classe dei modelli a rete di code di **Jackson** è formata da reti aperte, con centri di **servizio esponenziali**, **arrivi Poissoniani** e **topologia probabilistica** arbitraria indipendente dallo stato della rete.* <br>
-Questo perchè vi sono definite delle probabilità per cui un cliente può passare ad un altro nodo dopo averne usufruito di un altro. Ad esempio i clienti hanno una probabilità del $20\%$ di usufruire del `Reparto Scaffali` dopo aver usufruito del `Reparto Gastronomia`.
+*la classe dei modelli a rete di code di **Jackson** è formata da reti aperte, con centri di **servizio esponenziali**, **arrivi Poissoniani** e **topologia probabilistica** arbitraria indipendente dallo stato della rete.* <br>
+Questo perché vi sono definite delle probabilità per cui un cliente può passare ad un altro nodo dopo averne usufruito di un altro. Ad esempio i clienti hanno una probabilità del $20\%$ di usufruire del `Reparto Scaffali` dopo aver usufruito del `Reparto Gastronomia`.
 
 Per calcolare i parametri dei vari nodi è necessario definire la routing table delle probabilità in quanto la formula da utilizzare per calcolare il parametro $\lambda$, di ogni nodo, è la seguente:
 $$\lambda_i = \gamma_i \sum_{j=1}^{M}\lambda_j p_{ji}$$
@@ -227,7 +227,7 @@ Utilizzando il pratico editor per simulatori che offre Arena, tramite un semplic
 
 ## **Simulazione** :bar_chart:
 
-Una volta completata la codifica del modello, abbiamo selezionato i parametri di configuarazione per seguire il modello di convalida basato sul _Metodo delle Prove Ripetute_:
+Una volta completata la codifica del modello, abbiamo selezionato i parametri di configurazione per seguire il modello di convalida basato sul _Metodo delle Prove Ripetute_:
 
 - `Number of Replication`: `100`
 - `Warmup Period`: `60` - `Time Units`: `Minutes` (necessario a stabilizzare il simulatore)
@@ -347,4 +347,4 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   - **Confronto tra Utilizzazione** $\mathbf{\rho}$ <br> <img src="imgs/confronto_casse_p.png" width="70%">
 
 ## **Conclusioni** :end:
-In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analazzito presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 
+In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analizzato presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 
