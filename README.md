@@ -244,40 +244,93 @@ Il report completo della simulazione può essere consultato tramite il file FILE
 
   |Metrica|Average|
   | -----| ----- |
-  |Number Out | 99
+  |Number Out | 99|
+  |**Waiting Time** <br> Tempo medio di attesa di <br> un utente nel sistema| 5.1339|
+  |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 15.9064|
 
 - **Cassa 1**
-  |Metrica|Average|Half Width|
-  | -----| ----- | ------|
-  |$T_w$ (Average Waiting Time)| 4.4847|0.60|
-  |$W$ (Average Number of Clients Waiting)| 1.0013|0.16|
-  |$\rho$ (Resource Utilization)| 0.6227| 0.02|
+  |Metrica|Average|Half Width| Teorico|
+  | -----| ----- | ------| -|
+  |$T_w$ (Average Waiting Time)| 4.4847|0.60| 4.8913|
+  |$W$ (Average Number of Clients Waiting)| 1.0013|0.16| 1.0106|
+  |$\rho$ (Resource Utilization)| 0.6227| 0.02| 0.6198|
 
 - **Cassa 2**
-  |Metrica|Average|Half Width|
-  | -----| ----- | ------|
-  |$T_w$ (Average Waiting Time)| 4.3785|0.65|
-  |$W$ (Average Number of Clients Waiting)| 0.93397|0.16|
-  |$\rho$ (Resource Utilization)| 0.6046| 0.02|
+  |Metrica|Average|Half Width| Teorico|
+  | -----| ----- | ------| - |
+  |$T_w$ (Average Waiting Time)| 4.3785|0.65| 4.8913|
+  |$W$ (Average Number of Clients Waiting)| 0.93397|0.16| 1.0106|
+  |$\rho$ (Resource Utilization)| 0.6046| 0.02| 0.6198|
 
 - **Gastronomia**
-  |Metrica|Average|Half Width|
-  | -----| ----- | ------|
-  |$T_w$ (Average Waiting Time)| 1.9050|0.28|
-  |$W$ (Average Number of Clients Waiting)| 0.2674|0.04|
-  |$\rho$ (Resource Utilization)| 0.4045| 0.02|
+  |Metrica|Average|Half Width| Teorico|
+  | -----| ----- | ------| -|
+  |$T_w$ (Average Waiting Time)| 1.9050|0.28| 2.0758|
+  |$W$ (Average Number of Clients Waiting)| 0.2674|0.04| 0.2829|
+  |$\rho$ (Resource Utilization)| 0.4045| 0.02| 0.4089|
 
-- **Utilizzo delle risorse**
+- Grafici:
+  - **Utilizzo delle risorse** <br>
   <img src="imgs/utilization_chart.png" width="60%">
+  - **Cassa Teorico Vs Simulato** <br>
+  <img src="imgs/cassa_teorico_vs_simulato.png" width="70%">
+  - **Gastronomia Teorico Vs Simulato** <br> 
+    <img src="imgs/gastronomia_teorico_vs_simulato.png" width="70%">
 
+   
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
-Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `??` con soli `??` di attesa. <br>
-Per mostrare le variazioni delle performance del sistema abbiamo comunque deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.
+Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `15,9064 min` con soli `5,1339 min` di attesa. <br>
+Per mostrare le variazioni delle performance del sistema abbiamo comunque deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.<br>
+Il nuovo modello viene così rappresentato:
+
+<img src="imgs/modello_migliorato.png" width="70%">
+
+
 
 I parametri teorici sono i seguenti:
+- **Cassa** 1-2-3 $M/M/1$
+  |**Metrica**|**Valore**|
+  |   -   |   -   |
+  | Tempo medio di arrivo $\lambda$ | 0.137 $min^-1$ |
+  | Tempo medio di servizio $T_s$ | 3 $min$ |
+  | Tempo medio di interarrivo $\mu$ | 0,333 $min^-1$ |
+  | Intensità del traffico di sistema $\rho$ | 0.413 |
+  | Numero medio di utenti nel sistema $N$ | 0.704 |
+  | Numero medio di utenti in coda $W$ | 0.291 |
+  | Tempo medio di risposta $R$ | 5.112 |
+  | Tempo medio atteso in coda $T_w$ | 2.112 |
 
 
 I risultati ottenuti dalle simulazioni sono i seguenti:
+- **System**
+  Possiamo notare come il miglioramento delle prestazioni del sistema è minimo, in quanto si abbassa in media di circa soli $2 min$.
+
+  |Metrica|Average|
+  | -----| ----- |
+  |Number Out | 99|
+  |**Waiting Time** <br> Tempo medio di attesa di <br> un utente nel sistema| 2.8283|
+  |**Total Time** <br> Tempo medio speso da <br> un utente nel sistema| 13,8056|
+
+- **Cassa 1**
+  |Metrica|Average|Half Width| Teorico|
+  | -----| ----- | ------| -|
+  |$T_w$ (Average Waiting Time)| 2.1168|0.34| 2.1126 |
+  |$W$ (Average Number of Clients Waiting)| 0.3011|0.06| 0.2910|
+  |$\rho$ (Resource Utilization)| 0.4128| 0.02| 0.4132|
+
+- **Cassa 2**
+  |Metrica|Average|Half Width|Teorico|
+  | -----| ----- | ------|-|
+  |$T_w$ (Average Waiting Time)| 2.3086|0.41| 2.1126 |
+  |$W$ (Average Number of Clients Waiting)| 0.3537|0.07| 0.2910|
+  |$\rho$ (Resource Utilization)| 0.425| 0.02| 0.4132|
+
+- **Cassa 3**
+  |Metrica|Average|Half Width|Teorico|
+  | -----| ----- | ------|-|
+  |$T_w$ (Average Waiting Time)| 1.7880|0.25| 2.1126 |
+  |$W$ (Average Number of Clients Waiting)| 0.2619|0.04| 0.2910|
+  |$\rho$ (Resource Utilization)| 0.4090| 0.02| 0.4132|
 
 
 ## **Conclusioni** :end:

@@ -4,7 +4,7 @@
 - [x] Creare plot distribuzione e frequenze
 - [x] Confermare validazione di dati con un'altra prova
     - [x] Ripulire e abbellire file excel
-    - [ ] Caricare file excel relativo ad analisi matematica del modello
+    - [x] Caricare file excel relativo ad analisi matematica del modello
 - [x] Definire la struttra del progetto, ad es: vari nodi e modelli di coda
 - [x] Creare un simulatore della distribuzione convalidata che segua i dati
 - [x] Creare diagrammi/disegni di configurazione per il sistema
@@ -18,14 +18,16 @@
 - [ ] Creare in Python un simulatore che genera tali ingressi e simuli il supermercato
 - [x] Creare simulatore con Arena
 - [x] Fare simulazioni
-    - [ ] Inserire report
-    - [ ] Inserire confronto parametri teorici e parametri simulati
+    - [x] Inserire report
+    - [x] Inserire confronto parametri teorici e parametri simulati
     - [ ] Convalidare simulazioni
 - [x] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
-    - [ ] Inserire diagramma nuovo modello
+    - [x] Inserire diagramma nuovo modello
     - [ ] Inserire report
-    - [ ] Fare simulazione
-    - [ ] Effettuare analisi matematica della proposta di miglioramento
-    - [ ] Inserire confronto parametri teorici e parametri simulati
-    - [ ] Simulazione e convalida della proposta di miglioramento
+    - [x] Fare simulazione
+    - [x] Effettuare analisi matematica della proposta di miglioramento
+    - [x] Inserire confronto parametri teorici e parametri simulati
+    - [ ] Convalida della proposta di miglioramento
+- [ ] Rinominare file analisi matematica excel
+- [ ] Modificare nomi nei report arena
 - [x] Conclusioni
