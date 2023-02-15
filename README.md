@@ -18,10 +18,10 @@
 ### **Introduzione**
 Questo progetto consiste in uno studio relativo ad un supermercato locale :convenience_store:: verranno definiti e analizzati i dati iniziali e le performance a partire da osservazioni reali. Si passerà poi ad applicarli e convalidarli mediante un modello di simulazione, sviluppato in `Arena Simulation`. Infine verranno illustrate alcune possibili soluzioni per il miglioramento delle performance generali del modello studiato.
 
-L’ambiente verrà programmato per simulare le operazioni quotidiane del supermercato e dei relativi clienti. Perciò l’ambiente rispecchierà la conformazione dei locali e il processo attraverso il quale un cliente entra nel negozio, preleva i prodotti, paga alla cassa i prodotti selezionati e infine esce dal negozio.
+L’ambiente verrà programmato per simulare le operazioni quotidiane del supermercato e dei relativi clienti. Perciò l’ambiente rispecchierà la conformazione dei locali e il processo attraverso il quale un cliente entra nel negozio, preleva i prodotti, paga alla cassa e infine esce dal negozio.
 
 ## **Astrazione del Modello** :pencil2:
-Per prima cosa è necessario definire un'astrazione del sistema da analizzare, in modo da poterla utilizzare per gli studi analitici da eseguire. È opportuno scegliere un livello di astrazione idoneo in quanto un livello di astrazione troppo specifico può rendere molto difficoltoso lo svolgimento dei successivi sviluppi e test del simulatore, mentre un livello di astrazione poco approfondito potrebbe portare ad ottenere dei risultati non coerenti al modello reale. <br>
+Per prima cosa è necessario definire un'astrazione del sistema da analizzare, in modo da poterla utilizzare per gli studi analitici a seseguire. È opportuno scegliere un livello di astrazione idoneo in quanto un livello di astrazione troppo specifico può rendere molto difficoltoso lo svolgimento dei successivi sviluppi e test del simulatore, mentre un livello di astrazione poco approfondito potrebbe portare ad ottenere dei risultati non coerenti con il modello reale. <br>
 Il sistema analizzato può essere rappresentato tramite un modello ad eventi discreti di tipo aperto, con spazio degli stati discreto. In particolare, una persona (cliente) che si reca nel supermercato può farlo per una o più delle seguenti ragioni:
 - Acquisto di beni nel reparto degli scaffali
 - Acquisto di beni nel reparto gastronomia
@@ -29,9 +29,9 @@ Il sistema analizzato può essere rappresentato tramite un modello ad eventi dis
 Una volta presi i beni di interesse, il cliente deve recarsi alla cassa per pagare per poi uscire dal supermercato.
 
 Il sistema può quindi essere rappresentato con 3 nodi:
-- **Reparto degli scaffali**: il numero di serventi per questo reparto può essere ipotizzato essere $\infty$ in quando non vi è un limite teorico al numero di clienti che possono contemporaneamente trovarsi in questo nodo. Il limite nell'atto pratico esiste ed è dovuto a limitazioni fisiche ma, per semplificazione verrà considerato un numero di serventi pari a $\infty$
+- **Reparto degli scaffali**: il numero di serventi per questo reparto può essere ipotizzato come $\infty$ in quando non vi è un limite teorico al numero di clienti che possono contemporaneamente trovarsi in questo nodo. Il limite nell'atto pratico esiste ed è dovuto a limitazioni fisiche ma, per semplificazione non verrà considerato.
 - **Reparto Gastronomia**: il numero di serventi in questo reparto è pari a 1 in quanto c'è solo un operatore a disposizione dei clienti che li serve secondo un ordine FIFO
-- **Cassa**: il numero di serventi in questo reparto è pari a 2 in quanto il supermercato ha due commessi a disposizione per le casse adibite al pagamento dei beni acquistati da parte dei clienti. Tuttavia, ogni cassa ha una propria coda, quindi il modello deve essere mappato come un sistema dato da 2 nodi $M/M/1$.
+- **Cassa**: il numero di serventi in questo reparto è pari a 2 in quanto il supermercato ha due commessi a disposizione per le casse adibite al pagamento. Tuttavia, ogni cassa ha una propria coda, quindi il modello deve essere mappato con un sistema composto da 2 nodi $M/M/1$.
 
 Risulta necessario conoscere i tempi di servizio, la distribuzione degli arrivi al supermercato e il relativo utilizzo dei nodi da parte degli utenti. Ulteriori informazioni sulla raccolta dati e sui tempi di servizio del sistema, sono disponibili nella sezione [Raccolta Dati](#raccolta-dati-ledger).
 
@@ -292,7 +292,7 @@ Nelle tabelle successive verranno riportati entrambi i valori di confidenza per 
 
 ## **Proposte di miglioramento del modello** :chart_with_upwards_trend:
 Possiamo notare come il modello rispetta già quelli che potrebbero essere dei limiti di attesa per i clienti, in quanto il tempo totale medio speso da un utente nel supermercato è di circa `15,9064 min` con soli `5,1339 min` di attesa. <br>
-Per mostrare le variazioni delle performance del sistema abbiamo comunque deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.<br>
+Un possibile miglioramento, volto ad alleggerire il carico dei commessi in cassa (ora a circa il 60% di utilizzo) e a diminuire il tempo medio di attesa, può essere l'aggiunta di un'ulteriore cassa. Per mostrare le variazioni delle performance del sistema abbiamo quindi deciso di effettuare una nuova simulazione aggiungendo una nuova cassa. Il modello studiato presenta le stesse caratteristiche del precedente tranne per i nodi relativi alla cassa che passano da 2 $M/M/1$ a 3 $M/M/1$.<br>
 Il nuovo modello viene così rappresentato:
 
 <img src="imgs/modello_migliorato.png" width="80%">
@@ -347,4 +347,4 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
   - **Confronto tra Utilizzazione** $\mathbf{\rho}$ <br> <img src="imgs/confronto_casse_p.png" width="70%">
 
 ## **Conclusioni** :end:
-In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analizzato presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance nel caso in cui venga aggiunta una nuova cassa. 
+In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analizzato presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance  e ai relativi miglioramenti nel caso in cui venga aggiunta una nuova cassa. 

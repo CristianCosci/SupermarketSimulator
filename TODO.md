@@ -20,14 +20,14 @@
 - [x] Fare simulazioni
     - [x] Inserire report
     - [x] Inserire confronto parametri teorici e parametri simulati
-    - [ ] Convalidare simulazioni
+    - [x] Convalidare simulazioni
 - [x] Trovare una proposta di miglioramento (probabilmente consiste nell'aprire una terza cassa)
     - [x] Inserire diagramma nuovo modello
     - [x] Inserire report
     - [x] Fare simulazione
     - [x] Effettuare analisi matematica della proposta di miglioramento
     - [x] Inserire confronto parametri teorici e parametri simulati
-    - [ ] Convalida della proposta di miglioramento
+    - [x] Convalida della proposta di miglioramento
 - [x] Rinominare file analisi matematica excel
 - [x] Modificare nomi nei report arena
 - [x] Conclusioni
