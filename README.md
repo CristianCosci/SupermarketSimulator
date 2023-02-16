@@ -348,3 +348,8 @@ I risultati ottenuti dalle simulazioni sono i seguenti:
 
 ## **Conclusioni** :end:
 In conclusione, è stato dimostrato come è possibile utilizzare la teoria della simulazione per un'applicazione reale. In questo caso specifico, il sistema analizzato presenta già una buona configurazione (in quanto si tratta di una nota catena). Tuttavia, abbiamo mostrato quelle che potrebbero essere le variazioni di performance  e ai relativi miglioramenti nel caso in cui venga aggiunta una nuova cassa. 
+
+<hr>
+
+_A Project by_  :dancing_men: <br>
+[Nicolò Vescera](https://github.com/ncvescera) :orangutan: & [Cristian Cosci](https://github.com/CristianCosci) :chicken:
