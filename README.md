@@ -353,6 +353,6 @@ In conclusione, è stato dimostrato come è possibile utilizzare la teoria della
 
 _A Project by_  :dancing_men: <br>
 
-| ![cosci](https://avatars.githubusercontent.com/u/44636000?v=4) | ![vescera](https://avatars.githubusercontent.com/u/10250769?v=4)|
+| ![cosci](https://avatars.githubusercontent.com/u/44636000?s=421&v=4) | ![vescera](https://avatars.githubusercontent.com/u/10250769?s=421&v=4)|
 | - | - |
 | [Cristian Cosci](https://github.com/CristianCosci) :chicken: | [Nicolò Vescera](https://github.com/ncvescera) :orangutan: |
